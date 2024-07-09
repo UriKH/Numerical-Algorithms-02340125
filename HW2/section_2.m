@@ -6,12 +6,6 @@ N = 4000;
 %%  ==================== Load MNIST dataset ======================
 load('mnist.mat');
 
-% ------- Little bit of  exploration to feel the data -------------
-whos
-disp(training); 
-disp(size(training.images));
-% ----------------------------------------------------------------
-
 %%  ================== Instantiate classifiers (0 - 9) =======================
 % create classiffier weight matrix
 % (each column is the classifier for the index-1)

@@ -1,17 +1,11 @@
 clc; clear;
- 
+
 %% ======================= Parameters ===========================
 N = 4000;
 digit0 = 0;
 
 %%  ==================== Load MNIST dataset ======================
 load('mnist.mat');
-
-% ------- Little bit of exploration to feel the data -------------
-whos
-disp(training); 
-disp(size(training.images));
-% ----------------------------------------------------------------
 
 imagesPerDigit0 = training.images(:,:,training.labels == digit0);
 imagesPerDigitOther = training.images(:,:,training.labels ~= digit0);
@@ -33,7 +27,7 @@ b_train = b_all(1:N);
 
 x=pinv(A_train)*b_train; 
 
-A_test = A_all(N+1:2*N,:); 
+A_test = A_all(N+1:2*N,:);
 b_test = b_all(N+1:2*N); 
 
 %% ===================== Check Performance ===========================
